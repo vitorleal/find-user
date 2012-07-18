@@ -1,29 +1,39 @@
-$(function () {
-  var json, userOk, userID;
+//remove spaces, put to lower case and remove prefix
+function cleanUser(usr) {
+  return usr.trim().toLowerCase().replace('xe', '');
+}
+//filter user id against input value
+function filterUsers(usr) {
+  return (cleanUser(usr.USUARIO) === cleanUser($('#userId').val()));
+}
+//print the users
+function printResult(usr) {
+  $('#userResult').append("<div><strong>" + usr.NOMBRE + "</strong> <em>" + usr["CORREO INTERNO"] + "</em></div>");
+}
 
+
+$(function () {
+  var json;
+
+  //Get users.json file
   $.getJSON(chrome.extension.getURL('users.json'), function (jsonUsers) {
     json = jsonUsers;
   });
 
-  function returnUser(usr) {
-    var user = usr.USUARIO.trim().toLowerCase().replace('xe', '');
-
-    if (user === userID) {
-      userOk = true;
-      $('.error').remove();
-      $('#userResult').append("<div><strong>" + usr.NOMBRE + "</strong> <em>" + usr["CORREO INTERNO"] + "</em></div>");
-
-    } else if (userOk === false) {
-      $('#userResult').html("<strong class='error'>Not found</strong>");
-    }
-  }
-
+  //do the search
   $('#search').on("click", function (ev) {
     ev.preventDefault();
 
-    userOk = false;
-    userID = $('#userID').val().trim().toLowerCase().replace('xe', '');
+    var userId = cleanUser($('#userId').val()),
+      filter = json.users.filter(filterUsers);
 
-    json.users.forEach(returnUser);
+    $('#userResult').html('');
+
+    if (filter.length) {
+      filter.forEach(printResult);
+    } else {
+      $('#userResult').html("<strong class='error'>Not found</strong>"); //If no user show a message
+    }
+
   });
 });
