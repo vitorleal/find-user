@@ -1,21 +1,19 @@
-//remove spaces, put to lower case and remove prefix
-function cleanUser(usr) {
-  return usr.trim().toLowerCase().replace('xe', '');
-}
-//filter user id against input value
-function filterUsers(usr) {
-  return (cleanUser(usr.USUARIO) === cleanUser($('#userId').val()));
-}
-//print the users
-function printResult(usr) {
-  $('#userResult').append("<div><strong>" + usr.NOMBRE + "</strong> <em>" + usr["CORREO INTERNO"] + "</em></div>");
-}
-
-
 $(function () {
-  var json;
+  var json,
+    //remove spaces, put to lower case and remove prefix
+    cleanUser   = function (usr) {
+      return usr.trim().toLowerCase().replace('xe', '');
+    },
+    //filter user id against input value
+    filterUsers = function (usr) {
+      return (cleanUser(usr.USUARIO) === cleanUser($('#userId').val()));
+    },
+    //print the users
+    printResult = function (usr) {
+      $('#userResult').append("<div><strong>" + usr.NOMBRE + "</strong> <em>" + usr["CORREO INTERNO"] + "</em></div>");
+    };
 
-  //Get users.json file
+  //get users.json file
   $.getJSON(chrome.extension.getURL('users.json'), function (jsonUsers) {
     json = jsonUsers;
   });
@@ -32,8 +30,7 @@ $(function () {
     if (filter.length) {
       filter.forEach(printResult);
     } else {
-      $('#userResult').html("<strong class='error'>Not found</strong>"); //If no user show a message
+      $('#userResult').html("<strong class='error'>Not found</strong>"); //if no user show a message
     }
-
   });
 });
