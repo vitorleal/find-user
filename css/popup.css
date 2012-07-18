@@ -1,0 +1,77 @@
+html {
+  color: #666;
+  font-family: Arial;
+  width: 270px;
+  padding: 10px;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  font-size: 16px;
+  color: #0078D2;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  font-size: 12px;
+  padding: 6px 10px;
+  margin: 0;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0079c1), color-stop(100%, #00559c));
+  border-radius: 4px;
+  display: inline-block;
+  font-weight: bold;
+  color: #fff;
+  border: 1px solid #00559D;
+  cursor: pointer;
+  text-align: center;
+}
+
+button:hover {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #00559c), color-stop(100%, #0079c1));
+}
+
+input[type="text"] {
+  font-size: 14px;
+  height: 23px;
+  padding: 3px 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: #D6D6D6 0 2px 2px inset;
+  font-family: arial;
+  border: 1px solid #E8E8E6;
+  color: #434A58;
+  margin: 0;
+}
+
+input[type="text"]:focus {
+  box-shadow: 0 0 0 2px #DEF4FB, #D6D6D6 0 2px 2px inset;
+  color: #434A58;
+  outline: none;
+  border: 1px solid #E8E8E6;
+  background-color: #FFFFF5;
+}
+
+#userResult {
+  font-size: 14px;
+}
+
+#userResult div {
+  clear: both;
+  padding: 10px 0;
+  border-top: solid 1px #e5e5e5;
+}
+
+#userResult em {
+  font-size: 12px;
+}
+
+.error {
+  color: #CA0161;
+}
