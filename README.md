@@ -7,7 +7,7 @@ How to install
 --------------
 
 Go to the Extensions options and check the developer mode
-![Screenshot 1](https://github.com/vitorleal/findUser/img/Extensiones.png)\
+![Screenshot 1](https://github.com/vitorleal/findUser/raw/master/img/Extensiones.png)
 
 Then choose upload extension and choose the file to upload
-![Screenshot 2](https://github.com/vitorleal/findUser/img/Extensiones2.png)\
+![Screenshot 2](https://github.com/vitorleal/findUser/raw/master/img/Extensiones2.png)
