@@ -4,7 +4,7 @@
         "FOTO": "",
         "USUARIO": "XE27649",
         "EMPRESA": "",
-        "NOMBRE": "Vitor Murcia Tinocco Cesar Leal",
+        "NOMBRE": "Vitor Leal",
         "PUESTO": "",
         "CORREO INTERNO": "",
         "NOMBRE DEL EQUIPO": "",
@@ -13,4 +13,7 @@
     }
 ]}
 
-/* For the privacy of the users i removed the list. For generate the list just download the csv file of the users list in the google docs and convert the file to json in this site http://www.cparker15.com/code/utilities/csv-to-json/  */
+/* For the privacy of the users i removed the list.
+For generate the list just download the csv file of the users
+list in the google docs and convert the file to json in this
+site http://www.cparker15.com/code/utilities/csv-to-json/  */
